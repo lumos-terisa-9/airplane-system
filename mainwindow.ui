@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>805</width>
+    <height>831</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>欢迎使用415航空:D</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 设置窗口背景为渐变色 */
+QWidget {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
+    stop:0 rgba(251,102,102, 200), 
+    stop:1 rgba(20,196,188, 210));
+}
+
+/* 设置QTabWidget背景为透明，确保其不继承窗口背景 */
+QTabWidget, QTabWidget &gt; QTabBar, QTabWidget &gt; QStackedWidget {
+    background: transparent;
+}
+
+/* 设置QTabWidget的边框和圆角样式 */
+QTabWidget {
+    border: 4px solid rgb(200, 200, 200); /* 增加边框宽度 */
+    border-radius: 25px; /* 根据尺寸调整圆角半径 */
+}
+
+/* 设置QTabBar的背景和边框样式 */
+QTabBar {
+    background-color: white; /* 或者您希望的颜色 */
+    border: none; /* 移除边框，避免与QTabWidget的边框重叠 */
+    border-radius: 15px; /* 根据尺寸调整圆角半径 */
+}
+
+/* 设置QTabBar中每个tab的样式 */
+QTabBar::tab {
+    background-color: rgb(230, 230, 230);
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 15px; /* 根据尺寸调整圆角半径 */
+    min-width: 100px;
+    min-height: 20px;
+    padding: 5px;
+}
+
+/* 设置选中的tab的样式 */
+QTabBar::tab:selected {
+    background-color: rgb(20, 196, 188);
+    color: white;
+}
+
+/* 设置鼠标悬停时的tab样式 */
+QTabBar::tab:hover {
+    background-color: rgb(22, 218, 208);
+}
+
+/* 设置鼠标按下时的tab样式 */
+QTabBar::tab:pressed {
+    background-color: rgb(17, 171, 164);
+}
+
+/* 设置QTabWidget中的页面（QStackedWidget）的背景 */
+QTabWidget &gt; QStackedWidget &gt; QWidget {
+    background-color: white; /* 或者您希望的颜色 */
+    border-radius: 15px; /* 根据尺寸调整圆角半径 */
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">QPushButton, QComboBox, QDateEdit {
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    font: 25 14pt '微软雅黑 Light';
+    color: rgb(31, 31, 31);
+    border: 2px solid rgb(20, 196, 188);
+    border-radius: 10px;
+}
+
+QPushButton::hover {
+    background-color: rgb(22, 218, 208);
+}
+
+QPushButton::pressed {
+    background-color: rgb(17, 171, 164);
+}
+
+QTabBar::tab {
+    background: rgb(230, 230, 230);
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    min-width: 100px;
+    min-height: 20px;
+    padding: 5px;
+}
+
+QTabBar::tab:selected {
+    background: rgb(20, 196, 188);
+    color: white;
+}
+
+QTabBar::tab:hover {
+    background: rgb(22, 218, 208);
+}
+
+QTabBar::tab:pressed {
+    background: rgb(17, 171, 164);
+}
+
+QComboBox {
+    padding-right: 20px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white;
+    border: 1px solid rgb(20, 196, 188);
+    selection-background-color: rgb(200, 200, 200);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: transparent; /* 确保箭头背景透明 */
+}
+
+QComboBox::down-arrow {
+    image: none; /* 移除默认箭头图像 */
+    border: solid black; /* 设置三角形边框的颜色 */
+    border-width: 0 1px 1px 0; /* 设置三角形边框的宽度 */
+    width: 8px; /* 设置三角形箭头的宽度 */
+    height: 8px; /* 设置三角形箭头的高度 */
+    margin: 5px; /* 设置三角形箭头的外边距 */
+    transform: rotate 45deg; /* 旋转三角形以形成箭头形状 */
+}
+
+QComboBox QAbstractItemView {
+    /* 设置下拉列表视图的样式 */
+    border: 1px solid darkgray;
+    selection-background-color: rgba(20,196,188, 210)
+    background-color: rgba(255,255,255, 255)
+}
+
+</string>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::TabPosition::South</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>40</width>
+        <height>16</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="tab">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <attribute name="icon">
+        <iconset theme="QIcon::ThemeIcon::AppointmentNew"/>
+       </attribute>
+       <attribute name="title">
+        <string>首页</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="4" column="1">
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>30</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>始发地</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <spacer name="verticalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>400</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="6" column="1">
+         <widget class="QDateEdit" name="beginDate">
+          <property name="styleSheet">
+           <string notr="true">qproperty-buttonSymbols: NoButtons</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>50</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>30</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>50</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="10" column="0" colspan="7">
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::Shape::HLine</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="5">
+         <widget class="QPushButton" name="searchTicket">
+          <property name="text">
+           <string>查询</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>50</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="5">
+         <widget class="QComboBox" name="endLocation">
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: darkblue;</string>
+          </property>
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="3">
+         <widget class="QPushButton" name="showTime">
+          <property name="text">
+           <string>打开日历</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="6">
+         <spacer name="horizontalSpacer_16">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="3">
+         <widget class="QPushButton" name="exchangeLocation">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::MediaPlaylistRepeat"/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="6">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>50</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="beginLocation">
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: darkblue;</string>
+          </property>
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>100</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="8" column="1">
+         <spacer name="verticalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="5">
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>目的地</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1" colspan="5">
+         <widget class="QLabel" name="label_3">
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/pictures/pic/total2.jpg);
+background-color: rgb(255, 255, 255);
+   background-repeat: no-repeat;
+   background-position: center;
+    background-size: 100% auto; /* 图片宽度占满QLabel，高度自动保持比例 */
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="icon">
+        <iconset theme="edit-find"/>
+       </attribute>
+       <attribute name="title">
+        <string>查询</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="3">
+         <spacer name="horizontalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>60</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="4">
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::MediaPlaylistRepeat"/>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <spacer name="verticalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>1</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="5">
+         <spacer name="horizontalSpacer_13">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>60</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="1" colspan="7">
+         <widget class="QFrame" name="frame_3">
+          <property name="frameShape">
+           <enum>QFrame::Shape::HLine</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+          <property name="midLineWidth">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QComboBox" name="Check_beginLocation">
+          <property name="styleSheet">
+           <string notr="true">
+    selection-background-color: lightgray;</string>
+          </property>
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="6">
+         <widget class="QComboBox" name="Check_endLocation">
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer_14">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="7">
+         <spacer name="horizontalSpacer_15">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="7" column="1" colspan="7">
+         <widget class="QListWidget" name="flights">
+          <property name="styleSheet">
+           <string notr="true">QListWidget {
+    background-color: #f0f0f0; /* 设置列表控件的背景颜色 */
+}
+QListWidget::item {
+    background-color: #fafff6; /* 设置列表项的背景颜色 */
+    border: 1px solid #defffb; /* 设置列表项的边框 */
+    font-size: 16pt; /* 设置列表项文本的字体大小 */
+    min-height: 36px;  /* 设置列表项的最小高度 */
+    min-width: 100px; /* 设置列表项的最小宽度 */
+    /* 首选大小通常是通过 min-height 和 min-width 来间接设置的 */
+}
+QListWidget::item:hover {
+    background-color: #ccffff; /* 设置鼠标悬停时列表项的背景颜色 */
+}
+QListWidget::item:selected {
+     /* 设置选中列表项的背景颜色 */
+	
+	background-color: rgb(255, 115, 117);
+}
+
+QListWidget QScrollBar:vertical {
+    background: #ff8c8c; /* 设置垂直滚动条的背景颜色 */
+    width: 16px; /* 设置垂直滚动条的宽度 */
+    margin: 0px 0px 0px 0px; /* 设置垂直滚动条的边距 */
+}
+QListWidget QScrollBar::handle:vertical {
+    background: #ff7b98; /* 设置垂直滚动条手柄的背景颜色 */
+}
+QListWidget QScrollBar::add-line:vertical {
+    background: #a0a0a0; /* 设置垂直滚动条增加按钮的背景颜色 */
+}
+QListWidget QScrollBar::sub-line:vertical {
+    background: #a0a0a0; /* 设置垂直滚动条减少按钮的背景颜色 */
+}
+QListWidget QScrollBar::up-arrow:vertical, QListWidget QScrollBar::down-arrow:vertical {
+    border: 1px solid #a0a0a0; /* 设置垂直滚动条箭头的边框 */
+    width: 3px; /* 设置垂直滚动条箭头的宽度 */
+    height: 3px; /* 设置垂直滚动条箭头的高度 */
+    background: #f0f0f0; /* 设置垂直滚动条箭头的背景颜色 */
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>A1051  广州市 - 珠海市  2024/11/29 23:00 - 2024/11/30 01:00</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <spacer name="verticalSpacer_13">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="4">
+         <widget class="QPushButton" name="showTime_2">
+          <property name="text">
+           <string>打开日历</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="icon">
+        <iconset theme="edit-copy"/>
+       </attribute>
+       <attribute name="title">
+        <string>我的</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="4">
+         <widget class="QPushButton" name="modify">
+          <property name="text">
+           <string>修改密码</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <spacer name="horizontalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>50</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QLabel" name="label_4">
+          <property name="styleSheet">
+           <string notr="true">font: 290 30pt &quot;Microsoft YaHei UI&quot;;
+background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>用 户 名</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <spacer name="verticalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="13" column="1">
+         <widget class="QPushButton" name="MyOrder">
+          <property name="text">
+           <string>我的订单</string>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="1">
+         <widget class="QPushButton" name="logOut">
+          <property name="text">
+           <string>退出登录</string>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="1">
+         <spacer name="verticalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="12" column="1">
+         <widget class="QPushButton" name="MyPassenger">
+          <property name="text">
+           <string>我的乘机人</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>50</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="14" column="1">
+         <spacer name="verticalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>250</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="11" column="4">
+         <spacer name="horizontalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>200</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="9" column="0" colspan="5">
+         <widget class="QFrame" name="frame_2">
+          <property name="frameShape">
+           <enum>QFrame::Shape::HLine</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+          <property name="midLineWidth">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>50</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="1">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>10</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="2">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>50</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>805</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

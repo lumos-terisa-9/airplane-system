@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConfirmPurchase</class>
+ <widget class="QDialog" name="ConfirmPurchase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>629</width>
+    <height>824</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>确认支付界面</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(251,102,102, 200), stop:1 rgba(20,196,188, 210));
+font: 290 10pt &quot;Microsoft YaHei UI&quot;;</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1">
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 50px;</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="sizeConstraint">
+       <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
+      </property>
+      <item row="9" column="1">
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';
+</string>
+        </property>
+        <property name="text">
+         <string>起飞时间</string>
+        </property>
+       </widget>
+      </item>
+      <item row="17" column="3">
+       <spacer name="verticalSpacer_10">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="25" column="1">
+       <widget class="QLabel" name="label_8">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';
+</string>
+        </property>
+        <property name="text">
+         <string>支付状态</string>
+        </property>
+       </widget>
+      </item>
+      <item row="28" column="3">
+       <spacer name="verticalSpacer_14">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="29" column="1">
+       <widget class="QLabel" name="label_10">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>身份证号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="25" column="3">
+       <widget class="QLineEdit" name="lineEditState">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="15" column="3">
+       <spacer name="verticalSpacer_9">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="33" column="3">
+       <widget class="QPushButton" name="btn_confirm">
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton {
+height: 30px;
+font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+
+}
+QPushButton:hover {
+    background-color: rgb(22,218,208);
+}
+QPushButton:pressed {
+    background-color: rgb(17,171,164);
+}</string>
+        </property>
+        <property name="text">
+         <string>确认支付</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="3">
+       <widget class="QLineEdit" name="lineEditFlightId">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="22" column="3">
+       <widget class="QLineEdit" name="lineEditSeat">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="30" column="3">
+       <spacer name="verticalSpacer_15">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="32" column="3">
+       <spacer name="verticalSpacer_17">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="19" column="1">
+       <widget class="QLabel" name="label_6">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>价格</string>
+        </property>
+       </widget>
+      </item>
+      <item row="36" column="3">
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="19" column="3">
+       <widget class="QLineEdit" name="lineEditPrice">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2">
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>订单号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="27" column="1">
+       <widget class="QLabel" name="label_9">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>乘客姓名</string>
+        </property>
+       </widget>
+      </item>
+      <item row="23" column="3">
+       <spacer name="verticalSpacer_13">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="29" column="3">
+       <widget class="QLineEdit" name="lineEditIdNumber">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;
+
+</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="3">
+       <widget class="QLineEdit" name="lineEditEndTime">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="22" column="1">
+       <widget class="QLabel" name="label_11">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>座位</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="14" column="1">
+       <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>出发地</string>
+        </property>
+       </widget>
+      </item>
+      <item row="35" column="5">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>30</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="7" column="3">
+       <spacer name="verticalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="12" column="3">
+       <spacer name="verticalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="3" column="3">
+       <widget class="QLineEdit" name="lineEditOrderId">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="35" column="0">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>30</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="9" column="3">
+       <widget class="QLineEdit" name="lineEditBeginTime">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="31" column="3">
+       <widget class="QLabel" name="note">
+        <property name="styleSheet">
+         <string notr="true">font: 290 15pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(255, 85, 127);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="35" column="3">
+       <widget class="QPushButton" name="btn_abandon">
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton {
+height: 30px;
+font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+
+}
+QPushButton:hover {
+    background-color: rgb(22,218,208);
+}
+QPushButton:pressed {
+    background-color: rgb(17,171,164);
+}</string>
+        </property>
+        <property name="text">
+         <string>放弃订单</string>
+        </property>
+       </widget>
+      </item>
+      <item row="34" column="3">
+       <spacer name="verticalSpacer_16">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="11" column="1">
+       <widget class="QLabel" name="label_7">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>到达时间</string>
+        </property>
+       </widget>
+      </item>
+      <item row="26" column="3">
+       <spacer name="verticalSpacer_12">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="20" column="3">
+       <spacer name="verticalSpacer_11">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="27" column="3">
+       <widget class="QLineEdit" name="lineEditName">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="16" column="3">
+       <widget class="QLineEdit" name="lineEditDestination">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="3">
+       <spacer name="verticalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="14" column="3">
+       <widget class="QLineEdit" name="lineEditOrigin">
+        <property name="styleSheet">
+         <string notr="true">font: 25 14pt '微软雅黑 Light';
+color: rgb(31,31,31);
+padding-left:20px;
+background-color: rgb(255, 255, 255);
+border:2px solid rgb(20,196,188);
+border-radius:15px;
+height: 30px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="label_3">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>航班号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="16" column="1">
+       <widget class="QLabel" name="label_5">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 14pt '微软雅黑 Light';</string>
+        </property>
+        <property name="text">
+         <string>目的地</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>300</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="31" column="5">
+       <spacer name="verticalSpacer_18">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
